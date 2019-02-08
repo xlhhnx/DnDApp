@@ -25,7 +25,7 @@ namespace DnDApp.Engine.Logic.Factories
 
         public void Load( string filePath )
         {
-            // TODO : Load in default statistics;
+            // TODO : Load in default statistics
         }
 
         public bool Contains( string statCode ) =>

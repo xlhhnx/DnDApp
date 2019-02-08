@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DnDApp.Engine.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace DnDApp.Engine
     {
         //---------- Instance ----------//
         public event Action OnRun;
-        public event Action<TimeSpan> OnTick;
+        public event Action<TimeSpan> OnUpdate;
         public event Action<int> OnExit;
 
         protected DateTime _lastTime;
@@ -25,7 +26,7 @@ namespace DnDApp.Engine
             {
                 StartTime();
             };
-            OnTick = delegate
+            OnUpdate = delegate
             { };
             OnExit = delegate
             { };
@@ -42,7 +43,7 @@ namespace DnDApp.Engine
                 _lastTime = now;
 
                 // Do Stuff
-                OnTick( _appTime );
+                OnUpdate( _appTime );
             }
             OnExit(_exitCode);
             return _exitCode;
@@ -55,7 +56,7 @@ namespace DnDApp.Engine
 
             if ( force )
             {
-                OnTick = delegate
+                OnUpdate = delegate
                 { };
             }
         }

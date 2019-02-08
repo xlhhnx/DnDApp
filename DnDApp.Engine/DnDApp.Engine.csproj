@@ -40,8 +40,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DnDApp.cs" />
+    <Compile Include="Interfaces\IEditorState.cs" />
+    <Compile Include="Interfaces\IGameState.cs" />
+    <Compile Include="Interfaces\IMenuState.cs" />
     <Compile Include="Interfaces\IModifier.cs" />
+    <Compile Include="Interfaces\ISystem.cs" />
     <Compile Include="Logic\Factories\StatisticsFactory.cs" />
+    <Compile Include="Logic\Systems\Editor.cs" />
+    <Compile Include="Logic\Systems\Game.cs" />
+    <Compile Include="Logic\Systems\Menu.cs" />
     <Compile Include="Models\AddativeModifier.cs" />
     <Compile Include="Models\BasicStatistic.cs" />
     <Compile Include="Models\Character.cs" />
@@ -49,6 +56,8 @@
     <Compile Include="Models\ResourceStatistic.cs" />
     <Compile Include="Program.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
